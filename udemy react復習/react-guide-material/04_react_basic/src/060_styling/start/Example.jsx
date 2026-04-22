@@ -5,10 +5,16 @@ import "./Example.css"
 import Child from "./coponent/Child";
 
 const Example = () => {
+  const profile = [
+    {name:"yuuma", age:28, country:"ja"},
+    {name:"manato", age:28, country:"UK"}
+  ]
   return (
     <>
-    <Child />
-    <Child color="red"/>
+    <Child 
+    name = {profile[0].name}
+    age = {profile[0].age}
+    country= {profile[0].country}  />
    </>
   );
 };

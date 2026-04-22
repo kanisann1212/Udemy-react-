@@ -1,7 +1,9 @@
-   export default function Child({color = 'blue'}){
+   export default function Child({name,age,country}){
     return(
-    <div className={`component-${color}`}>
-      <h3>Hello {color}</h3>
+    <div className='component'>
+      <h3>Hello {name}</h3>
+      <h3>Age: {age}</h3>
+      <h3>country {country}</h3>
     </div>
     )
    }
