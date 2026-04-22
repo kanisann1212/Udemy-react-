@@ -6,7 +6,10 @@ import Child from "./coponent/Child";
 
 const Example = () => {
   return (
-  <Child name="鈴木"/>
+    <>
+    <Child />
+    <Child color="red"/>
+   </>
   );
 };
 

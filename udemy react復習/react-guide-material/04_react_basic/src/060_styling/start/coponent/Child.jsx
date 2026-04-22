@@ -1,7 +1,7 @@
-   export default function Child(props){
+   export default function Child({color = 'blue'}){
     return(
-    <div className="component">
-      <h3>Hello {props.name}</h3>
+    <div className={`component-${color}`}>
+      <h3>Hello {color}</h3>
     </div>
     )
    }
