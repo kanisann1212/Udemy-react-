@@ -1,9 +1,20 @@
+import { useToast } from "@chakra-ui/react";
 import { useState } from "react";
 const Form = ({ createTodo }) => {
   const [enteredTodo, setEnteredTodo] = useState("");
+  const toast = useToast();
 
   const addTodo = (e) => {
     e.preventDefault();
+    if (!enteredTodo) {
+      toast({
+        title: "何も入力してないよ！",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      })
+      return;
+    }
 
     const newTodo = {
       id: Math.floor(Math.random() * 1e5),
