@@ -21,7 +21,7 @@ const Example = () => {
     }
   }, 0)
  // ↑dispatchからstepとして引数も受け取れる
- 
+  
   const Rplus = () => {
     dispatch({type:'+',step:2});
   }
