@@ -14,9 +14,9 @@ const Example = () => {
     //   throw new Error('不明な値です。')  
     // }　
     // ↑こうやっても書ける
-    if (action === '+') {
+    if (type === '+') {
       return prev + step;
-    } else if (action === '-') {
+    } else if (type === '-') {
       return prev - step;
     }
   }, 0)
