@@ -1,23 +1,18 @@
-import { useState } from "react";
 import "./Example.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import { Tycon } from "./context/Tycontext";
 
-const Example = () => {
-  const [theme, setTheme] = useState('light')
-  
-  const changeTheme = (e) => setTheme(e.target.value)
-  
-  const THEMES = ['light', 'dark', 'red'];
-
+const Example = () => {  
   return (
-    <>
-      <header className={`content-${theme}`}>
-        
-      </header>
-      <main className={`content-${theme}`}>
-        <h1>テーマの切り替え</h1>
-      </main>
-    </>
+    <Tycon>
+      <Header />
+      <Main />
+    </Tycon>
   );
 };
 
 export default Example;
+
+
+// ※すべてを読み込むファイル

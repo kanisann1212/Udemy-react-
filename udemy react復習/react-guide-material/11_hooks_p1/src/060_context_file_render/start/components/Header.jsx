@@ -1,10 +1,13 @@
 import { useTheme } from "../context/ThemeContext"
+import { useUpdateTheme } from "../context/ThemeContext";
 
 
 const Header = () => {
-  const [theme, setTheme] = useTheme();
+  const theme = useTheme()
+  const setTheme = useUpdateTheme()
 
   const THEMES = ["light", "dark", "red"];
+  console.log('ヘッダーだよ')
 
   const changeTheme = (e) => setTheme(e.target.value);
 
