@@ -20,8 +20,13 @@ const Example = () => {
       return prev - step;
     }
   }, 0)
+<<<<<<< HEAD
  // ↑dispatchからstepとして引数も受け取れる
   
+=======
+ // ↑↓dispatchからstepとして引数も受け取れる
+ 
+>>>>>>> origin/main
   const Rplus = () => {
     dispatch({type:'+',step:2});
   }
