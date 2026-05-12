@@ -3,8 +3,7 @@ import { createContext, useContext, useReducer } from "react";
 const CounterContext = createContext();
 const CounterDispatchContext = createContext();
 
-const CounterProvider = ({ children }) => {
-    const [state, dispatch] = useReducer((prev, { type, step }) => {
+const Reducer = (prev, { type, step }) => {
         switch (type) {
           case "+":
             return prev + step;
@@ -13,7 +12,10 @@ const CounterProvider = ({ children }) => {
           default:
             throw new Error('不明なactionです。')
         }
-      }, 0);
+      };
+
+const CounterProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(Reducer, 0);
     return (
         <CounterContext.Provider value={state}>
             <CounterDispatchContext.Provider value={dispatch}>
