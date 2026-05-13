@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatchTodos } from "../context/TodoContext";
+import todoAPI from "../api/todo";
 
 const Item = ({ todo }) => {
   const [editingContent, setEditingContent] = useState(todo.content);
@@ -19,11 +20,19 @@ const Item = ({ todo }) => {
       editing: !todo.editing,
       content: editingContent,
     };
-    dispatch({ type: 'todo/update', todo: newTodo });
+    const PATCH = async () => {
+      const res = await todoAPI.patch(newTodo)
+      dispatch({ type: 'todo/update', todo: res });
+    }
+    PATCH()
   };
 
   const complete = (todo) => {
-    dispatch({ type: "todo/delete", todo });
+    const DELETE = async () => {
+      await todoAPI.delete(todo)
+      dispatch({ type: "todo/delete", todo });
+    }
+    DELETE()
   };
 
   return (

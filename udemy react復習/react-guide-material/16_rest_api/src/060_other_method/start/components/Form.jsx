@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatchTodos } from "../context/TodoContext";
-const Form = ({ createTodo }) => {
+import todoAPI from "../api/todo";
+
+const Form = () => {
   const [enteredTodo, setEnteredTodo] = useState("");
   const dispatch = useDispatchTodos();
 
@@ -12,10 +14,12 @@ const Form = ({ createTodo }) => {
       content: enteredTodo,
       editing: false,
     };
-
-    dispatch({ type: "todo/add", todo: newTodo });
-
-    setEnteredTodo("");
+    const POST = async()=> {
+      const res = await todoAPI.post(newTodo)
+      dispatch({ type: "todo/add", todo: res });
+      setEnteredTodo("");
+    }
+    POST()
   };
   return (
     <div>
