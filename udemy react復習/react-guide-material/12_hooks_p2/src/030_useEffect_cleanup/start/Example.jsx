@@ -15,6 +15,8 @@ const Example = () => {
     window.localStorage.setItem('time-key-end', time)
   }, [time]);
 
+  // useEffectのクリーンナップはそのEffectを消したときも動き続ける化膿性があるものがあるか(たとえばタイマーとか)で判断して、あればクリーンナップすること
+
   return (
     <h3>
       <time>{time}</time>
