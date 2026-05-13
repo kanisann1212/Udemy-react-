@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Child } from "./child";
+import Child  from "./child";
 
 const Example = () => {
   console.log ('親')
