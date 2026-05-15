@@ -12,7 +12,9 @@ export default function ArticleForm() {
 
     fetch('/api/article', { method: form.method, body: formData }).then((res) => {
       if(!res.ok) {
-        return 'エラーが発生しました。'
+        return res.json().then(data=>{
+          return data.msg
+        })
       }
       return res.json().then(data => {
         return `${data.id}:${data.title}の登録が完了しました。`
